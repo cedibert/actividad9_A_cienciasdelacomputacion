@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	string palabra, invertido;
+	char letra;
+	cin >> palabra;
+	for (int i = 0; i < palabra.size(); i++) {
+		letra = palabra[i];
+		invertido = letra + invertido;
+	}
+	if (palabra == invertido) {
+		cout << "1";
+	}
+	else {
+		cout << "0";
+	}
+	return 0;
+}
