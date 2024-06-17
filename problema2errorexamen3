@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+float main() {
+	int aprobados, reprobados, rac;
+	int i;
+	float sum;
+	float calific;
+	i = 0;
+	aprobados = 0;
+	reprobados = 0;
+	rac = 0;
+	while (i < 9) {
+		do {
+			cout << "Calificacion " << (i + 1) << " : ";
+			cin >> calific;
+			if (calific < 0.1 || calific > 120) {
+				cout << "Calificacion fuera de rango" << endl;
+			}
+		} while (calific < 0.1 || calific > 120);
+		if (calific >= 60.5) {
+			aprobados++;
+		}
+		else {
+			reprobados++;
+			if (calific > 45 && calific < 60.5) {
+				rac++;
+				cout << rac << endl;
+			}
+		}
+		i++;
+	}
+	sum = aprobados + reprobados;
+	
+	cout << endl;
+	cout << "Porcentaje de aprobados: " << round(aprobados / sum) * 100 << " % " << "Estudiantes" << endl;
+	cout << "Porcentaje de reprobados: " << round(reprobados / sum) * 100 << " % " << "Estudiantes" << endl;
+	cout << "Estudiantes con derecho al RAC: " << rac << " estudiantes" << endl;
+	return 0;
+}
